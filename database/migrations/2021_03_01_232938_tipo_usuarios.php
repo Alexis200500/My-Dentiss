@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TipoSangre extends Migration
+class TipoUsuarios extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class TipoSangre extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_sangre', function(Blueprint $table){
-            $table->increments('idtipossan');
-            $table->string('tipo',5);
-            $table->rememberToken();
-            $table->timestamps();
-        });
+      Schema::create('tipo_usuarios',function(Blueprint $table){
+          $table->increments('idtipo_u');
+          $table->string('tipo',20);
+          $table->rememberToken();
+          $table->timestamps();
+      });
     }
 
     /**
@@ -28,6 +28,6 @@ class TipoSangre extends Migration
      */
     public function down()
     {
-        Schema::drop('tipo_sangre');
+        Schema::drop('tipo_usuarios');
     }
 }

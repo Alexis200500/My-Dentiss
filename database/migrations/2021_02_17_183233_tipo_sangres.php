@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Status extends Migration
+class TipoSangres extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class Status extends Migration
      */
     public function up()
     {
-        Schema::create('status', function(Blueprint $table){
-            $table->increments('idstatus');
-            $table->string('nombre',30);
+        Schema::create('tipo_sangres', function(Blueprint $table){
+            $table->increments('idtipossan');
+            $table->string('tipo',5);
             $table->rememberToken();
             $table->timestamps();
-          });
+        });
     }
 
     /**
@@ -28,6 +28,6 @@ class Status extends Migration
      */
     public function down()
     {
-        Schema::drop('status');
+        Schema::drop('tipo_sangres');
     }
 }
