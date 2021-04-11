@@ -7,6 +7,7 @@ use App\Http\Controllers\MunicipiosController;
 use App\Http\Controllers\TipoMedicamentosController;
 use App\Http\Controllers\MedicamentosController;
 use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\Tipo_sangreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,6 +93,16 @@ Route::get('/activausuario/{idusuario}',[UsuariosController::class,'activausuari
 Route::get('/borrarusuario/{idusuario}',[UsuariosController::class,'borrarusuario'])->name('borrarusuario');
 Route::get('/modificausuario/{idusuario}',[UsuariosController::class,'modificausuario'])->name('modificausuario');
 Route::get('/guardacambiosusuario',[UsuariosController::class,'guardacambiosusuario'])->name('guardacambiosusuario');
+
+                            /*tipo sangres */
+Route::get('/altatiposangre',[Tipo_sangreController::class, 'altatiposangre'])->name('altatiposangre');
+Route::post('/guardartiposan',[Tipo_sangreController::class, 'guardartiposan'])->name('guardartiposan');
+Route::get('/reportetiposan',[Tipo_sangreController::class,'reportetiposan'])->name('reportetiposan');
+Route::get('/desactivatiposangre/{idtipossan}',[Tipo_sangreController::class,'desactivatiposangre'])->name('desactivatiposangre');
+Route::get('/activatiposangre/{idtipossan}',[Tipo_sangreController::class,'activatiposangre'])->name('activatiposangre');
+Route::get('/borrartiposangre/{idtipossan}',[Tipo_sangreController::class,'borrartiposangre'])->name('borrartiposangre');
+Route::get('/modificatiposangre/{idtipossan}',[Tipo_sangreController::class,'modificatiposangre'])->name('modificatiposangre');
+Route::post('/guardacambiostiposangre',[Tipo_sangreController::class,'guardacambiostiposangre'])->name('guardacambiostiposangre');
 
 //Limpiar cache
 Route::get('/clear-cache', function () { 

@@ -138,7 +138,7 @@
                       <li><a href="./production/formulario.html">Modificación Status</a></li>
                     </ul> -->
                   </li>
-                  <li><a href="reportetiposan"><i class="fa fa-tint"></i>Tipo de sangre <!--<span class="fa fa-chevron-down"></span>--></a>
+                  <li><a  href="{{route('reportetipousuario')}}"><i class="fa fa-tint"></i>Tipo de sangre <!--<span class="fa fa-chevron-down"></span>--></a>
                     <!-- <ul class="nav child_menu">                      
                       <li><a href="./production/formulario.html">Alta tipo de sangre</a></li>
                       <li><a href="./production/formulario.html">Reporte tipo de sangre</a></li>
