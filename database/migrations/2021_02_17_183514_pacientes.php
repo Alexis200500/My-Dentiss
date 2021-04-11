@@ -21,12 +21,11 @@ class Pacientes extends Migration
             $table->string('sexo',1);
             $table->string('edad',3);
             $table->integer('idtipossan')->unsigned();
-            $table->foreign('idtipossan')->references('idtipossan')->on('tipo_sangre');
+            $table->foreign('idtipossan')->references('idtipossan')->on('tipo_sangres');
             $table->string('telefono',10);
             $table->string('correo',40);
             $table->string('preguntaale',2);
             $table->string('alergias',150);
-            $table->string('activo',2);
             $table->rememberToken();
             $table->timestamps();
         });

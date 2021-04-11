@@ -66,7 +66,7 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                   <li><a a href="index"><i class="fa fa-home"></i> Inicio <!--<span class="fa fa-chevron-down"></span>--></a></li>
-                  <li><a href="reporteusuarios"><i class="fa fa-user"></i> Usuarios  <!--<span class="fa fa-chevron-down"></span>--></a>
+                  <li><a href="{{route('reporteusuarios')}}"><i class="fa fa-user"></i> Usuarios  <!--<span class="fa fa-chevron-down"></span>--></a>
                     <!-- <ul class="nav child_menu">                
                       <li><a href="./production/formulario.html">Alta usuarios</a></li>
                       <li><a href="./production/formulario.html">Reporte usuarios</a></li>

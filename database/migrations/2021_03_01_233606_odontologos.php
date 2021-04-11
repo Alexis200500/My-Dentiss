@@ -37,7 +37,7 @@ class Odontologos extends Migration
          
             $table->time('hora_entrada');
             $table->time('hora_salida');
-
+            
             $table->rememberToken();
             $table->timestamps();
         });

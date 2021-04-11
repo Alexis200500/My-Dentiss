@@ -6,6 +6,7 @@ use App\Http\Controllers\especialidadesController;
 use App\Http\Controllers\MunicipiosController;
 use App\Http\Controllers\TipoMedicamentosController;
 use App\Http\Controllers\MedicamentosController;
+use App\Http\Controllers\UsuariosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,7 @@ Route::get('/index',function(){
 
 //Odontologos
 Route::get('/alta_odontologos',[OdontologosController::class,'alta_odontologos'])->name('alta_odontologos');
+
 Route::post('/guardar_odontologos',[OdontologosController::class,'guardar_odontologos'])->name('guardar_odontologos');
 Route::get('/reportes_odontologos',[OdontologosController::class,'reportes_odontologos'])->name('reportes_odontologos');
 Route::get('/modifica_odontologos/{idodo}',[OdontologosController::class,'modifica_odontologos'])->name('modifica_odontologos');
@@ -81,6 +83,15 @@ Route::get('/activar_medicamentos/{idmed}',[MedicamentosController::class,'activ
 Route::get('/desactivar_medicamentos/{idmed}',[MedicamentosController::class,'desactivar_medicamentos'])->name('desactivar_medicamentos');
 Route::get('/eliminar_medicamentos/{idmed}',[MedicamentosController::class,'eliminar_medicamentos'])->name('eliminar_medicamentos');
 
+                                /*Usuarios*/
+Route::get('/altausuarios',[UsuariosController::class,'altausuarios'])->name('altausuarios');
+Route::post('/guardarusuario',[UsuariosController::class,'guardarusuario'])->name('guardarusuario');
+Route::get('/reporteusuarios',[UsuariosController::class,'reporteusuarios'])->name('reporteusuarios');
+Route::get('/desactivausuario/{idusuario}',[UsuariosController::class,'desactivausuario'])->name('desactivausuario');
+Route::get('/activausuario/{idusuario}',[UsuariosController::class,'activausuario'])->name('activausuario');
+Route::get('/borrarusuario/{idusuario}',[UsuariosController::class,'borrarusuario'])->name('borrarusuario');
+Route::get('/modificausuario/{idusuario}',[UsuariosController::class,'modificausuario'])->name('modificausuario');
+Route::get('/guardacambiosusuario',[UsuariosController::class,'guardacambiosusuario'])->name('guardacambiosusuario');
 
 //Limpiar cache
 Route::get('/clear-cache', function () { 
