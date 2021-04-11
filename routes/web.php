@@ -8,6 +8,7 @@ use App\Http\Controllers\TipoMedicamentosController;
 use App\Http\Controllers\MedicamentosController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\Tipo_sangreController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -104,6 +105,7 @@ Route::get('/borrartiposangre/{idtipossan}',[Tipo_sangreController::class,'borra
 Route::get('/modificatiposangre/{idtipossan}',[Tipo_sangreController::class,'modificatiposangre'])->name('modificatiposangre');
 Route::post('/guardacambiostiposangre',[Tipo_sangreController::class,'guardacambiostiposangre'])->name('guardacambiostiposangre');
 
+Route::get('/',[LoginController::class,'login'])->name('login');
 //Limpiar cache
 Route::get('/clear-cache', function () { 
     echo Artisan::call('config:clear'); 
