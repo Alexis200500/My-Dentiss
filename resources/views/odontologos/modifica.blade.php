@@ -6,7 +6,7 @@
         <h1>MODIFICAR ODONTOLOGO</h1>
         <div class="x_content">
             <form action="{{route('cambio_odontologos')}}" method="POST">
-                {{csrf_field()}}
+            {{csrf_field()}}
                 <div class="field item form-group">
                     <label class="col-form-label col-md-5 col-sm-5  label-align">ID<span
                             class="required">*</span></label>
