@@ -33,6 +33,7 @@ Route::get('/index',function(){
 
 //Odontologos
 Route::get('/alta_odontologos',[OdontologosController::class,'alta_odontologos'])->name('alta_odontologos');
+
 Route::post('/guardar_odontologos',[OdontologosController::class,'guardar_odontologos'])->name('guardar_odontologos');
 Route::get('/reportes_odontologos',[OdontologosController::class,'reportes_odontologos'])->name('reportes_odontologos');
 Route::get('/modifica_odontologos/{idodo}',[OdontologosController::class,'modifica_odontologos'])->name('modifica_odontologos');
