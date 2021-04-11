@@ -13,7 +13,7 @@ class especialidadesController extends Controller
     public function alta_especialidades(){
         $consulta = especialidades::orderBy('idesp','DESC')
             ->take(1)->get();
-        
+
         $cuantos = count($consulta);
         if ($cuantos==0) {
             $idesigue = 1;
@@ -38,7 +38,7 @@ class especialidadesController extends Controller
             Session::flash('mensaje',"La especialidad $request->especialidad sido creada correctamente");
 
             return redirect()->route('reportes_especialidades');
-        
+
     }
     public function reportes_especialidades(){
         $consulta = especialidades::withTrashed('idesp','especialidad','deleted_at')
@@ -46,8 +46,8 @@ class especialidadesController extends Controller
         ->get();
         // return $consulta;
         return view('especialidades.reportes')
-                ->with('consulta',$consulta); 
-         
+                ->with('consulta',$consulta);
+
     }
     public function modifica_especialidades($idesp){
         $consulta = especialidades::withTrashed('idesp','especialidad','deleted_at')
@@ -57,7 +57,7 @@ class especialidadesController extends Controller
         ->with('consulta',$consulta[0]);
     }
     public function guardarcambios_especialidades(Request $request){
-        
+
         $this->validate($request,[
             'especialidad'=> 'required|regex:/^[A-Z][A-Z,a-z, ,á,é,í,ó,ú,ü]+$/',
         ]);
@@ -66,11 +66,11 @@ class especialidadesController extends Controller
         $especialidades->idesp = $request->idesp;
         $especialidades->especialidad = $request->especialidad;
         $especialidades->save();
-       
+
         Session::flash('mensaje',"La especialidad ha sido modificada");
-        
+
         return redirect()->route('reportes_especialidades');
-        
+
     }
     public function activar_especialidades($idesp){
         $especialidades=especialidades::withTrashed()->where('idesp',$idesp)->restore();
@@ -78,7 +78,7 @@ class especialidadesController extends Controller
         Session::flash('mensaje',"La especialidad ha sido activada correctamente");
 
         return redirect()->route('reportes_especialidades');
-        
+
     }
     public function desactivar_especialidades($idesp){
         $especialidades=especialidades::find($idesp);
@@ -95,12 +95,12 @@ class especialidadesController extends Controller
         {
             $especialidades=especialidades::withTrashed()->find($idesp)->forceDelete();
             Session::flash('mensaje',"La especialidad ha sido eliminada del sistema correctamente");
-        
+
             return redirect()->route('reportes_especialidades');
         }
         else{
 
-            Session::flash('mensaje',"La especialidad no se puede eliminar por que tiene 
+            Session::flash('mensaje',"La especialidad no se puede eliminar por que tiene
                                         registros en otras tablas");
 
             return redirect()->route('reportes_especialidades');
