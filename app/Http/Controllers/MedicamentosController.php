@@ -8,6 +8,8 @@ use App\Models\tipo_medicamentos;
 use App\Models\det_consu_receta;
 use Session;
 
+
+
 class MedicamentosController extends Controller
 {
     public function alta_medicamentos(){

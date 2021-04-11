@@ -13,16 +13,16 @@ class Tratamientos extends Migration
      */
     public function up()
     {
-        Schema::create('tratamientos',function(Blueprint $table){
-            $table->increments('idtratamiento');
-            $table->string('nombre',50);
-            $table->string('descripcion',100);
-            $table->string('medicamento',50);
-            $table->float('precio',10);
-            $table->string('activo',2);  
-            $table->rememberToken();
-            $table->timestamps();
-        });
+      Schema::create('tratamientos',function(Blueprint $table){
+          $table->increments('idtratamiento');
+          $table->string('nombre',50);
+          $table->string('duracion',100);
+          $table->string('medicamento',50);
+          $table->string('precio',10);
+
+          $table->rememberToken();
+          $table->timestamps();
+      });
     }
 
     /**

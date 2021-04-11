@@ -13,14 +13,14 @@ class Estudios extends Migration
      */
     public function up()
     {
-        Schema::create('estudios',function(Blueprint $table){
-            $table->increments('idestudio');
-            $table->string('nombre',50);
-            $table->string('tipo',30);
-            $table->string('activo',2);
-            $table->rememberToken();
-            $table->timestamps();
-        });
+      Schema::create('estudios',function(Blueprint $table){
+          $table->increments('idestudio');
+          $table->string('nombre',50);
+          $table->string('tipo',30);
+          
+          $table->rememberToken();
+          $table->timestamps();
+      });
     }
 
     /**
@@ -33,3 +33,4 @@ class Estudios extends Migration
         Schema::drop('estudios');
     }
 }
+
